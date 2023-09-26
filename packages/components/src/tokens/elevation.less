@@ -1,0 +1,86 @@
+@import "./color.less";
+
+.elevationBase {
+  position: absolute;
+  content: "";
+  inset: 0;
+  border-radius: inherit;
+}
+
+.elevationLevel-0 {
+  &::before {
+    box-shadow: none;
+    opacity: 0;
+    .elevationBase;
+  }
+  &::after {
+    box-shadow: none;
+    opacity: 0;
+    .elevationBase;
+  }
+}
+
+.elevationLevel-1 {
+  &::before {
+    box-shadow: 0px 1px 2px 0px @shadow;
+    opacity: 0.3;
+    .elevationBase;
+  }
+  &::after {
+    box-shadow: 0px 1px 3px 1px @shadow;
+    opacity: 0.15;
+    .elevationBase;
+  }
+}
+
+.elevationLevel-2 {
+  &::before {
+    box-shadow: 0px 1px 2px 0px @shadow;
+    opacity: 0.3;
+    .elevationBase;
+  }
+  &::after {
+    box-shadow: 0px 2px 6px 2px @shadow;
+    opacity: 0.15;
+    .elevationBase;
+  }
+}
+
+.elevationLevel-3 {
+  &::before {
+    box-shadow: 0px 1px 3px 0px @shadow;
+    opacity: 0.3;
+    .elevationBase;
+  }
+  &::after {
+    box-shadow: 0px 4px 8px 3px @shadow;
+    opacity: 0.15;
+    .elevationBase;
+  }
+}
+
+.elevationLevel-4 {
+  &::before {
+    box-shadow: 0px 2px 3px 0px @shadow;
+    opacity: 0.3;
+    .elevationBase;
+  }
+  &::after {
+    box-shadow: 0px 6px 10px 4px @shadow;
+    opacity: 0.15;
+    .elevationBase;
+  }
+}
+
+.elevationLevel-5 {
+  &::before {
+    box-shadow: 0px 4px 4px 0px @shadow;
+    opacity: 0.3;
+    .elevationBase;
+  }
+  &::after {
+    box-shadow: 0px 8px 12px 6px @shadow;
+    opacity: 0.15;
+    .elevationBase;
+  }
+}

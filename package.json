@@ -1,0 +1,24 @@
+{
+  "name": "mono-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:svelte": "cd playgrounds/svelte && pnpm run dev",
+    "dev:vanilla": "cd playgrounds/vanilla-ts && pnpm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@changesets/cli": "^2.26.2"
+  },
+  "dependencies": {
+    "@zeir/material-web-quarkc": "workspace:^"
+  }
+}

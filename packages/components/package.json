@@ -1,0 +1,45 @@
+{
+  "name": "@zeir/material-web-quarkc",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "rollup -c",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "main": "./lib/index.umd.js",
+  "module": "./lib/index.js",
+  "types": "./lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./lib/index.umd.js",
+      "types": "./lib/types/index.d.ts"
+    }
+  },
+  "keywords": [],
+  "author": "zeir",
+  "license": "MIT",
+  "dependencies": {
+    "less": "^4.2.0",
+    "quarkc": "^1.0.39"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-decorators": "^7.22.15",
+    "@babel/plugin-transform-runtime": "^7.22.15",
+    "@babel/preset-env": "^7.22.20",
+    "@babel/preset-typescript": "^7.22.15",
+    "@babel/runtime": "^7.22.15",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.4",
+    "@rollup/plugin-node-resolve": "^15.2.1",
+    "@rollup/plugin-terser": "^0.4.3",
+    "@rollup/plugin-typescript": "^11.1.3",
+    "rollup": "^3.29.3",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-filesize": "^10.0.0",
+    "rollup-plugin-node-externals": "^6.1.1",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2"
+  }
+}

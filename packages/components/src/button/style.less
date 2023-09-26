@@ -1,0 +1,25 @@
+@import "../tokens/elevation.less";
+@import '../tokens/shape.less';
+
+button {
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  border: none;
+  outline: none;
+  user-select: none;
+  background: transparent;
+  height: 40px;
+  border-top-right-radius: @shapeCornerFull;
+  border-bottom-left-radius: @shapeCornerFull;
+  border-bottom-right-radius: @shapeCornerFull;
+  border-top-left-radius: @shapeCornerFull;
+  padding: 0 24px;
+  gap: 8px;
+  .md-shadow {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    .elevationLevel-1;
+  }
+}
