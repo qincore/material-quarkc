@@ -1,25 +1,78 @@
 @import "../tokens/elevation.less";
-@import '../tokens/shape.less';
+@import "../tokens/shape.less";
+@import "../tokens/typography.less";
+@import "../tokens/color.less";
+@import "./token.less";
+
+:host {
+  display: inline-flex;
+  height: 40px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+:host {
+  --md-ripple-hover-color: var(--md-button-hover-color);
+  --md-ripple-hover-opacity: 0;
+  --md-ripple-pressed-color: var(--md-button-pressed-color);
+  --md-ripple-pressed-opacity: var(--md-button-pressed-opacity);
+}
 
 button {
-  display: inline-block;
+  display: inherit;
   position: relative;
+  height: inherit;
   box-sizing: border-box;
   border: none;
   outline: none;
-  user-select: none;
   background: transparent;
-  height: 40px;
   border-top-right-radius: @shapeCornerFull;
   border-bottom-left-radius: @shapeCornerFull;
   border-bottom-right-radius: @shapeCornerFull;
   border-top-left-radius: @shapeCornerFull;
   padding: 0 24px;
   gap: 8px;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  user-select: none;
+  appearance: none;
+  .md-label-text {
+    .md-label-large;
+  }
   .md-shadow {
     position: absolute;
     inset: 0;
     border-radius: inherit;
+    .elevationLevel-0;
+  }
+  &::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+    border-radius: inherit;
+    z-index: -1;
+  }
+}
+
+:host([type="filled"]) {
+  button {
+    color: @onPrimary;
+    &::before {
+      background: @primary;
+    }
+  }
+}
+
+.md-hovered {
+  --md-ripple-hover-opacity: var(--md-button-hover-opacity);
+  .md-shadow {
     .elevationLevel-1;
+  }
+}
+
+.md-pressed {
+  .md-shadow {
+    .elevationLevel-0;
   }
 }

@@ -1,0 +1,8 @@
+@import "../tokens/color.less";
+
+:host([type = "filled"]) {
+  --md-button-hover-color: var(--md-hover-state-layer-color, @onPrimary);
+  --md-button-hover-opacity: var(--md-hover-state-layer-opacity, 0.08);
+  --md-button-pressed-color: var(--md-pressed-state-layer-color, @onPrimary);
+  --md-button-pressed-opacity: var(--md-pressed-state-layer-opacity, 0.12);
+}
