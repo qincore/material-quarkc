@@ -1,0 +1,44 @@
+@keyframes ripple {
+  from {
+    transform: scale(0.08);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
+
+:host,
+.md-ripple,
+.md-ripple-effect,
+.md-ripple::before {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+}
+
+:host {
+  .md-ripple {
+    .md-ripple-effect {
+      background-color: transparent;
+      border-radius: 50%;
+      pointer-events: none;
+      background-image: radial-gradient(
+        closest-side at 50% 50%,
+        var(--md-ripple-pressed-color) 40%,
+        transparent 100%
+      );
+      opacity: var(--md-button-pressed-opacity);
+      transition: opacity 0.6s;
+      animation: ripple var(--md-ripple-duration, 0.4s)
+        cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    &::before {
+      content: "";
+      z-index: -1;
+      background-color: var(--md-ripple-hover-color);
+      opacity: var(--md-ripple-hover-opacity);
+    }
+  }
+}

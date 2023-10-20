@@ -1,19 +1,27 @@
 import { QuarkElement, customElement, property } from "quarkc";
-import style from './style.less';
+import style from './style.less?inline';
+
+export interface IButtonProps {
+  type: "filled" | "outlined" | "text" | "elevated" | "tonal"
+}
 
 @customElement({
-  tag: "test-button",
+  tag: "md-button",
   style,
 })
 export class Button extends QuarkElement {
-  @property()
-  type: "elevated" | "filled";
+  @property({
+    type: String,
+  })
+  type = "filled"
   render() {
     return (
       <button onClick={() => console.log("456")}>
         <span class="md-shadow"></span>
-        {this.type}
-        <slot></slot>
+        <md-ripple class="md-button-ripple"></md-ripple>
+        <span class="md-label-text">
+          <slot></slot>
+        </span>
       </button>
     );
   }
