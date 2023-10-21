@@ -106,7 +106,7 @@ class Ripple extends QuarkElement {
       x - (clickPointX - offsetX),
       y - (clickPointY - offsetY)
     );
-    return d * 2;
+    return d * 1.8;
   };
 
   render() {
