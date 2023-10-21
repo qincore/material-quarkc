@@ -1,8 +1,44 @@
-@import "../tokens/color.less";
-
 :host([type = "filled"]) {
+  --md-button-container-color: @primary;
+  --md-button-label-color: @onPrimary;
   --md-button-hover-color: var(--md-hover-state-layer-color, @onPrimary);
   --md-button-hover-opacity: var(--md-hover-state-layer-opacity, 0.08);
   --md-button-pressed-color: var(--md-pressed-state-layer-color, @onPrimary);
+  --md-button-pressed-opacity: var(--md-pressed-state-layer-opacity, 0.12);
+}
+
+:host([type = "tonal"]) {
+  --md-button-container-color: @secondaryContainer;
+  --md-button-label-color: @onSecondaryContainer;
+  --md-button-hover-color: var(--md-hover-state-layer-color, @onSecondaryContainer);
+  --md-button-hover-opacity: var(--md-hover-state-layer-opacity, 0.08);
+  --md-button-pressed-color: var(--md-pressed-state-layer-color, @onSecondaryContainer);
+  --md-button-pressed-opacity: var(--md-pressed-state-layer-opacity, 0.12);
+}
+
+:host([type = "elevated"]) {
+  --md-button-container-color: @surfaceContainerLow;
+  --md-button-label-color: @primary;
+  --md-button-hover-color: var(--md-hover-state-layer-color, @primary);
+  --md-button-hover-opacity: var(--md-hover-state-layer-opacity, 0.08);
+  --md-button-pressed-color: var(--md-pressed-state-layer-color, @primary);
+  --md-button-pressed-opacity: var(--md-pressed-state-layer-opacity, 0.12);
+}
+
+:host([type = "outlined"]) {
+  --md-button-container-color: rgba(0, 0, 0, 0);
+  --md-button-label-color: @primary;
+  --md-button-hover-color: var(--md-hover-state-layer-color, @primary);
+  --md-button-hover-opacity: var(--md-hover-state-layer-opacity, 0.08);
+  --md-button-pressed-color: var(--md-pressed-state-layer-color, @primary);
+  --md-button-pressed-opacity: var(--md-pressed-state-layer-opacity, 0.12);
+}
+
+:host([type = "text"]) {
+  --md-button-container-color: rgba(0, 0, 0, 0);
+  --md-button-label-color: @primary;
+  --md-button-hover-color: var(--md-hover-state-layer-color, @primary);
+  --md-button-hover-opacity: var(--md-hover-state-layer-opacity, 0.08);
+  --md-button-pressed-color: var(--md-pressed-state-layer-color, @primary);
   --md-button-pressed-opacity: var(--md-pressed-state-layer-opacity, 0.12);
 }

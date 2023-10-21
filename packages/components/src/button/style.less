@@ -1,8 +1,12 @@
 @import "../tokens/elevation.less";
 @import "../tokens/shape.less";
 @import "../tokens/typography.less";
-@import "../tokens/color.less";
 @import "./token.less";
+@import "./_filled.less";
+@import "./_tonal.less";
+@import "./_elevated.less";
+@import "./_outlined.less";
+@import "./_text.less";
 
 :host {
   display: inline-flex;
@@ -25,12 +29,12 @@ button {
   border: none;
   outline: none;
   background: transparent;
+  color: var(--md-button-label-color);
   border-top-right-radius: @shapeCornerFull;
   border-bottom-left-radius: @shapeCornerFull;
   border-bottom-right-radius: @shapeCornerFull;
   border-top-left-radius: @shapeCornerFull;
   padding: 0 24px;
-  gap: 8px;
   cursor: pointer;
   align-items: center;
   justify-content: center;
@@ -44,7 +48,6 @@ button {
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    .elevationLevel-0;
   }
   &::before {
     position: absolute;
@@ -52,27 +55,6 @@ button {
     inset: 0;
     border-radius: inherit;
     z-index: -1;
-  }
-}
-
-:host([type="filled"]) {
-  button {
-    color: @onPrimary;
-    &::before {
-      background: @primary;
-    }
-  }
-}
-
-.md-hovered {
-  --md-ripple-hover-opacity: var(--md-button-hover-opacity);
-  .md-shadow {
-    .elevationLevel-1;
-  }
-}
-
-.md-pressed {
-  .md-shadow {
-    .elevationLevel-0;
+    background: var(--md-button-container-color);
   }
 }

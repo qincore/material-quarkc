@@ -1,0 +1,22 @@
+:host([type="elevated"]) {
+  button {
+    .md-shadow {
+      .elevationLevel-1;
+    }
+  }
+}
+
+:host([type="elevated"]) {
+  .md-hovered {
+    --md-ripple-hover-opacity: var(--md-button-hover-opacity);
+    .md-shadow {
+      .elevationLevel-2;
+    }
+  }
+
+  .md-pressed {
+    .md-shadow {
+      .elevationLevel-1;
+    }
+  }
+}
