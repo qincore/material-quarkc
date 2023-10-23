@@ -1,44 +1,82 @@
-:host([type = "filled"]) {
+:host([type="filled"]) {
   --md-button-container-color: @primary;
+  --md-button-container-opacity: 1;
   --md-button-label-color: @onPrimary;
+  --md-button-label-opacity: 1;
   --md-button-hover-color: var(--md-hover-state-layer-color, @onPrimary);
   --md-button-hover-opacity: var(--md-hover-state-layer-opacity, 0.08);
   --md-button-pressed-color: var(--md-pressed-state-layer-color, @onPrimary);
   --md-button-pressed-opacity: var(--md-pressed-state-layer-opacity, 0.12);
 }
 
-:host([type = "tonal"]) {
+:host([type="tonal"]) {
   --md-button-container-color: @secondaryContainer;
   --md-button-label-color: @onSecondaryContainer;
-  --md-button-hover-color: var(--md-hover-state-layer-color, @onSecondaryContainer);
+  --md-button-label-opacity: 1;
+  --md-button-hover-color: var(
+    --md-hover-state-layer-color,
+    @onSecondaryContainer
+  );
   --md-button-hover-opacity: var(--md-hover-state-layer-opacity, 0.08);
-  --md-button-pressed-color: var(--md-pressed-state-layer-color, @onSecondaryContainer);
+  --md-button-pressed-color: var(
+    --md-pressed-state-layer-color,
+    @onSecondaryContainer
+  );
   --md-button-pressed-opacity: var(--md-pressed-state-layer-opacity, 0.12);
 }
 
-:host([type = "elevated"]) {
+:host([type="elevated"]) {
   --md-button-container-color: @surfaceContainerLow;
+  --md-button-container-opacity: 1;
   --md-button-label-color: @primary;
+  --md-button-label-opacity: 1;
   --md-button-hover-color: var(--md-hover-state-layer-color, @primary);
   --md-button-hover-opacity: var(--md-hover-state-layer-opacity, 0.08);
   --md-button-pressed-color: var(--md-pressed-state-layer-color, @primary);
   --md-button-pressed-opacity: var(--md-pressed-state-layer-opacity, 0.12);
 }
 
-:host([type = "outlined"]) {
+:host([type="outlined"]) {
   --md-button-container-color: rgba(0, 0, 0, 0);
+  --md-button-container-opacity: 1;
   --md-button-label-color: @primary;
+  --md-button-label-opacity: 1;
+  --md-button-outline-color: @outline;
+  --md-button-outline-opacity: 1;
   --md-button-hover-color: var(--md-hover-state-layer-color, @primary);
   --md-button-hover-opacity: var(--md-hover-state-layer-opacity, 0.08);
   --md-button-pressed-color: var(--md-pressed-state-layer-color, @primary);
   --md-button-pressed-opacity: var(--md-pressed-state-layer-opacity, 0.12);
 }
 
-:host([type = "text"]) {
+:host([type="text"]) {
   --md-button-container-color: rgba(0, 0, 0, 0);
+  --md-button-container-opacity: 1;
   --md-button-label-color: @primary;
+  --md-button-label-opacity: 1;
   --md-button-hover-color: var(--md-hover-state-layer-color, @primary);
   --md-button-hover-opacity: var(--md-hover-state-layer-opacity, 0.08);
   --md-button-pressed-color: var(--md-pressed-state-layer-color, @primary);
   --md-button-pressed-opacity: var(--md-pressed-state-layer-opacity, 0.12);
 }
+
+:host([disabled][type="filled"]),
+:host([disabled][type="tonal"]),
+:host([disabled][type="elevated"]) {
+  --md-button-container-color: @onSurface;
+  --md-button-container-opacity: 0.12;
+  --md-button-label-color: @onSurface;
+  --md-button-label-opacity: 0.38;
+}
+
+:host([disabled][type = "outlined"]) {
+  --md-button-label-color: @onSurface;
+  --md-button-label-opacity: 0.38;
+  --md-button-outline-opacity: 0.12;
+}
+
+:host([disabled][type = "text"]) {
+  --md-button-label-color: @onSurface;
+  --md-button-label-opacity: 0.38;
+}
+

@@ -9,16 +9,34 @@
   </head>
   <body>
     <div id="app">
-      <div>
-        <md-button>Filled button</md-button>
+      <div style="margin-bottom: 24px;">
+        <md-button id="filled">Filled button</md-button>
         <md-button type="elevated">Elevated button</md-button>
         <md-button type="tonal">Tonal button</md-button>
         <md-button type="outlined">Outlined button</md-button>
         <md-button type="text">Text button</md-button>
       </div>
+      <div style="margin-bottom: 24px;">
+        <md-button id="filledDisabled" disabled>Filled button</md-button>
+        <md-button type="elevated" disabled>Elevated button</md-button>
+        <md-button type="tonal" disabled>Tonal button</md-button>
+        <md-button type="outlined" disabled>Outlined button</md-button>
+        <md-button type="text" disabled>Text button</md-button>
+      </div>
       <div style="position: relative; width: 200px; height: 200px; border: 1px solid #000">
         <md-ripple />
       </div>
     </div>
+    <script>
+      const filledDisabledBtn = document.querySelector('#filledDisabled');
+      filledDisabledBtn.addEventListener('click', () => {
+        console.log('点击了')
+      })
+
+      const filledBtn = document.querySelector('#filled');
+      filledBtn.addEventListener('click', () => {
+        console.log('点击了')
+      })
+    </script>
   </body>
 </html>
