@@ -29,7 +29,6 @@ button {
   border: none;
   outline: none;
   background: transparent;
-  color: var(--md-button-label-color);
   border-top-right-radius: @shapeCornerFull;
   border-bottom-left-radius: @shapeCornerFull;
   border-bottom-right-radius: @shapeCornerFull;
@@ -42,6 +41,8 @@ button {
   user-select: none;
   appearance: none;
   .md-label-text {
+    color: var(--md-button-label-color);
+    opacity: var(--md-button-label-opacity);
     .md-label-large;
   }
   .md-shadow {
@@ -49,12 +50,26 @@ button {
     inset: 0;
     border-radius: inherit;
   }
-  &::before {
+  &::before, &::after {
     position: absolute;
     content: "";
     inset: 0;
     border-radius: inherit;
     z-index: -1;
+  }
+  &::before {
     background: var(--md-button-container-color);
+    opacity: var(--md-button-container-opacity);
+  }
+  &::after {
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid var(--md-button-outline-color, rgba(0, 0, 0, 0));
+    opacity: var(--md-button-outline-opacity, 0);
+  }
+}
+
+:host([disabled]){
+  button{
+    cursor: not-allowed;
   }
 }
